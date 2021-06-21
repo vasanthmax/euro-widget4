@@ -1,0 +1,408 @@
+.widget3 {
+  .date-event-table {
+    border-collapse: collapse;
+    width: 80%;
+    border: 2px solid #929292;
+    margin: auto;
+    thead {
+      th {
+        background: #1c0e52;
+        color: #ffffff;
+        text-align: center;
+        border: 1px solid #929292;
+        padding: 5px;
+        text-align: left;
+      }
+      .addTo {
+        display: flex;
+        align-items: center;
+        img {
+          height: 20px;
+          margin-left: 10px;
+        }
+      }
+    }
+    tbody {
+      color: #1c0e52;
+      border: 1px solid #929292;
+
+      tr {
+        text-align: center;
+        .event {
+          text-align: left;
+        }
+        .venue {
+          text-align: left;
+          font-weight: normal;
+        }
+        .sport {
+          text-align: left;
+        }
+        .time {
+          font-weight: normal;
+        }
+
+        th {
+          padding: 5px;
+          border: 1px solid #929292;
+
+          img {
+            height: 30px;
+            text-align: center;
+          }
+        }
+        .calendar {
+          cursor: pointer;
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+      tr:nth-of-type(even) {
+        background: #e1e2e0;
+      }
+    }
+  }
+
+  .header {
+    margin-bottom: 20px;
+    margin-top: 40px;
+
+    img {
+      height: 50px;
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+    img:hover {
+      transform: scale(1.5);
+    }
+    .previous-date {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      color: #64c3d5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .day {
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .month {
+        line-height: 5px;
+        font-weight: bold;
+      }
+    }
+
+    .next-date {
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      color: #64c3d5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .day {
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .month {
+        line-height: 5px;
+        font-weight: bold;
+      }
+    }
+    .date-carousel {
+      width: 80%;
+      margin: auto;
+      position: relative;
+      .left-arrow {
+        top: 0;
+        left: 0;
+      }
+      .right-arrow {
+        top: 0;
+        right: 0;
+      }
+    }
+    .main-carousel {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      align-items: flex-start;
+      .date {
+        margin-right: 10px;
+        color: #64c3d5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .weekday {
+          font-size: 20px;
+        }
+        .day {
+          line-height: 80px;
+          font-weight: bold;
+          font-size: 120px;
+        }
+      }
+      .sport {
+        h3 {
+          color: #64c3d5;
+          font-size: 30px;
+        }
+        p {
+          color: #1c0e52;
+          font-size: 20px;
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  .filters {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    hr {
+      border-top: 1px solid #e1e2e0;
+    }
+
+    .filter-selector {
+      display: flex;
+      width: 100%;
+      .Dropdown-control {
+        width: 100%;
+        border: none;
+        color: #e1e2e0;
+      }
+      .Dropdown-menu {
+        width: 100%;
+        border: none;
+      }
+    }
+    .selected-filters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      color: #e1e2e0;
+      justify-content: space-between;
+
+      .filter {
+        display: flex;
+        align-items: center;
+
+        p {
+          margin-right: 10px;
+          color: #e1e2e0;
+        }
+        p span {
+          margin-right: 10px;
+          font-weight: bold;
+          font-size: 20px;
+          color: #929292;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .time-zone {
+    width: 80%;
+    margin: auto;
+    color: #929292;
+    p {
+      text-align: right;
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .header {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      .date-carousel {
+        width: 95%;
+        margin: auto;
+        img {
+          height: 40px;
+        }
+        .right-arrow {
+          top: 5%;
+        }
+        .left-arrow {
+          top: 5%;
+        }
+        .previous-date {
+          top: 0%;
+          left: 10%;
+          .mon {
+            line-height: 5px;
+            font-weight: bold;
+          }
+        }
+        .next-date {
+          top: 0%;
+          right: 10%;
+
+          .mon {
+            line-height: 5px;
+            font-weight: bold;
+          }
+        }
+        .main-carousel {
+          width: 70%;
+          margin: auto;
+          margin-top: 80px;
+          .date {
+            align-items: center;
+            .day {
+              font-size: 80px;
+              line-height: 50px;
+            }
+            .august {
+              color: #64c3d5;
+              font-size: 25px;
+              font-weight: bold;
+              line-height: 50px;
+            }
+          }
+          .sport {
+            h3 {
+              display: none;
+            }
+            p {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+
+    .filters {
+      width: 95%;
+      .filter-selector {
+        .Dropdown-control {
+          font-size: 10px;
+        }
+      }
+      .selected-filters {
+        .filter {
+          font-size: 12px;
+        }
+      }
+    }
+    .month {
+      display: none;
+    }
+    .time-zone {
+      font-size: 12px;
+      width: 95%;
+      margin: auto;
+      color: #929292;
+      p {
+        text-align: right;
+      }
+    }
+
+    .date-event-table {
+      display: none;
+    }
+    .content-table-mobile {
+      width: 95%;
+      margin: auto;
+      border-collapse: collapse;
+      padding: 10px;
+      thead {
+        tr {
+          display: flex;
+          .sport-event {
+            width: 100%;
+            text-align: left;
+          }
+        }
+        th {
+          background: #1c0e52;
+          color: #ffffff;
+          text-align: center;
+          padding: 5px;
+          width: 100%;
+        }
+        .addTo {
+          display: flex;
+          align-items: center;
+          img {
+            height: 20px;
+          }
+        }
+      }
+      .event-name {
+        width: 100%;
+      }
+      .sport {
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+    tbody {
+      text-align: left;
+
+      .table-row {
+        color: #1c0e52;
+        font-size: 12px;
+        tr {
+          display: flex;
+          .event {
+            width: 100%;
+            font-size: 12px;
+          }
+        }
+        .calendar {
+          text-align: center;
+          cursor: pointer;
+
+          img {
+            height: 20px;
+          }
+        }
+        .medal {
+          text-align: center;
+          img {
+            height: 30px;
+          }
+        }
+        .venue {
+          font-weight: normal;
+        }
+        th {
+          width: 100%;
+        }
+      }
+      .table-row:nth-of-type(even) {
+        background: #e1e2e0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .content-table-mobile {
+      display: none;
+    }
+    .mon {
+      display: none;
+    }
+    .august {
+      display: none;
+    }
+  }
+}

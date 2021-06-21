@@ -1,0 +1,236 @@
+.widget2 {
+  .content-table {
+    border-collapse: collapse;
+    width: 80%;
+    border: 2px solid #929292;
+    margin: auto;
+
+    thead {
+      th {
+        background: #1c0e52;
+        color: #ffffff;
+        text-align: center;
+        border: 1px solid #929292;
+        padding: 5px;
+      }
+      .sport {
+        text-align: left;
+        font-weight: bold;
+        width: 40%;
+      }
+      .venue {
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+    tbody {
+      color: #1c0e52;
+      text-align: center;
+      border: 1px solid #929292;
+      tr {
+        th {
+          padding: 5px;
+          border: 1px solid #929292;
+
+          img {
+            height: 30px;
+            text-align: center;
+          }
+        }
+
+        .eventName {
+          text-align: left;
+        }
+        .place {
+          font-weight: lighter;
+          text-align: left;
+        }
+      }
+      tr:nth-of-type(even) {
+        background: #e1e2e0;
+      }
+    }
+  }
+
+  .header {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    img {
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .sportdetails {
+      h1 {
+        font-weight: bold;
+      }
+      p {
+        font-size: 20px;
+        color: #1c0e52;
+      }
+      p span {
+        font-weight: bold;
+        font-size: 20px;
+        color: #1c0e52;
+      }
+    }
+  }
+
+  .filters {
+    width: 80%;
+    margin: auto;
+
+    hr {
+      border-top: 1px solid #e1e2e0;
+    }
+
+    .filter-selector {
+      display: flex;
+      width: 100%;
+      .Dropdown-control {
+        width: 100%;
+        border: none;
+        color: #000;
+      }
+      .Dropdown-menu {
+        width: 100%;
+        border: none;
+      }
+    }
+    .selected-filters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      color: #e1e2e0;
+      justify-content: space-between;
+
+      .filter {
+        display: flex;
+        align-items: center;
+
+        p {
+          margin-right: 10px;
+          color: #e1e2e0;
+        }
+        p span {
+          margin-right: 10px;
+          font-weight: bold;
+          font-size: 20px;
+          color: #929292;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .month {
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 42%;
+    color: #1c0e52;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 992px) {
+    .header {
+      display: flex;
+      width: 95%;
+      margin: auto;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      img {
+        height: 100px;
+        margin-right: 10px;
+      }
+
+      .sportdetails {
+        h1 {
+          font-weight: bold;
+          line-height: 30px;
+        }
+        p {
+          font-size: 15px;
+          color: #1c0e52;
+        }
+        p span {
+          font-weight: bold;
+          font-size: 15px;
+          color: #1c0e52;
+        }
+      }
+    }
+
+    .filters {
+      width: 95%;
+    }
+    .month {
+      display: none;
+    }
+
+    .content-table {
+      display: none;
+    }
+    .content-table-mobile {
+      width: 95%;
+      margin: auto;
+      border-collapse: collapse;
+      padding: 10px;
+      thead {
+        th {
+          background: #1c0e52;
+          color: #ffffff;
+          text-align: center;
+          padding: 5px;
+        }
+        .sport {
+          text-align: left;
+          font-weight: bold;
+        }
+      }
+      tbody {
+        tr {
+          .event-name {
+            text-align: left;
+            color: #1c0e52;
+            font-size: 12px;
+          }
+          th {
+            padding: 10px;
+          }
+          .date {
+            font-weight: normal;
+            color: #1c0e52;
+            font-size: 12px;
+          }
+          .medals {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              height: 30px;
+            }
+          }
+        }
+        tr:nth-of-type(even) {
+          background: #e1e2e0;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .content-table-mobile {
+      display: none;
+    }
+  }
+}

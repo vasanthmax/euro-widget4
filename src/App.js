@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Widget1 from './components/widget1';
+import Widget2 from './components/widget2';
+import Widget3 from './components/widget3';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import ReactGa from 'react-ga';
 
 function App() {
+  useEffect(() => {
+    ReactGa.initialize('UA-76564619-3');
+
+    ReactGa.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' component={Widget1} exact />
+          <Route path='/sport' component={Widget2} />
+          <Route path='/day' component={Widget3}></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
