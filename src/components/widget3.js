@@ -10,6 +10,12 @@ import ConstantSport from '../constants/constantSport';
 import StaticArray from '../constants/staticWords';
 import Routing from '../constants/routing';
 const Widget3 = () => {
+  const facebookIcon =
+    'https://d156xmnjzkwf2j.cloudfront.net/SPW/social_media_icons/facebook.png';
+  const instagramIcon =
+    'https://d156xmnjzkwf2j.cloudfront.net/SPW/social_media_icons/instagram.png';
+  const twitterIcon =
+    'https://d156xmnjzkwf2j.cloudfront.net/SPW/social_media_icons/twitter.png';
   const calendar =
     'https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Other_elements/PNG/calendar.png';
 
@@ -23,6 +29,13 @@ const Widget3 = () => {
   const lang = window.location.pathname.split('/')[1];
   const bannersport = new URLSearchParams(window.location.search).get('sport');
   const bannerHeaderDesktop = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/desktop/${lang}/desktop_header_${lang}_${
+    bannersport === 'rowing'
+      ? 'rowing'
+      : bannersport === 'athletics'
+      ? 'athletics'
+      : 'default'
+  }.svg`;
+  const bannerFooter = `https://d156xmnjzkwf2j.cloudfront.net/SPW/footer/desktop/no_text_and_icons/desktop_footer_${
     bannersport === 'rowing'
       ? 'rowing'
       : bannersport === 'athletics'
@@ -803,6 +816,36 @@ const Widget3 = () => {
           })}
         </tbody>
       </table>
+      <div
+        className='footer'
+        style={{ backgroundImage: `url(${bannerFooter})` }}
+      >
+        <div className='web-route'>
+          <a href='https://www.europeanchampionships.com/' target='_top'>
+            <p>europeanchampionships.com&nbsp;&nbsp;&nbsp;|</p>
+          </a>
+          <a href='https://www.munich2022.com/' target='_top'>
+            <p>munich2022.com</p>
+          </a>
+        </div>
+        <ul>
+          <li>
+            <a href='https://www.instagram.com/munich2022/' target='_top'>
+              <img src={instagramIcon} alt='' />
+            </a>
+          </li>
+          <li>
+            <a href='https://www.facebook.com/ECMunich2022/' target='_top'>
+              <img src={facebookIcon} alt='' />
+            </a>
+          </li>
+          <li>
+            <a href='https://twitter.com/ecmunich2022' target='_top'>
+              <img src={twitterIcon} alt='' />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
