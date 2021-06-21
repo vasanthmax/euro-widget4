@@ -398,7 +398,15 @@ const Widget3 = () => {
       </div>
       <div className='back'>
         <div className='back-button'>
-          <Link to={`/${lang}`}>
+          <Link
+            to={
+              bannersport === 'rowing'
+                ? `/${lang}?lang=${lang}&sport=rowing`
+                : bannersport === 'athletics'
+                ? `/${lang}?lang=${lang}&sport=rowing`
+                : `/${lang}`
+            }
+          >
             {' '}
             <img
               src={
@@ -643,7 +651,13 @@ const Widget3 = () => {
                     //     ? 'canoe-sprint'
                     //     : ch.sport.toLowerCase().replace(' ', '-')
                     // }#widget-02`}
-                    href={`/${lang}/sport/${disciplineRoute}`}
+                    href={
+                      bannersport === 'rowing'
+                        ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
+                        : bannersport === 'athletics'
+                        ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
+                        : `/${lang}/sport/${disciplineRoute}`
+                    }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
                   >
@@ -770,7 +784,13 @@ const Widget3 = () => {
                       //     ? 'canoe-sprint'
                       //     : ch.sport.toLowerCase().replace(' ', '-')
                       // }#widget-02`}
-                      href={`/${lang}/sport/${disciplineRoute}`}
+                      href={
+                        bannersport === 'rowing'
+                          ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
+                          : bannersport === 'athletics'
+                          ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
+                          : `/${lang}/sport/${disciplineRoute}`
+                      }
                       style={{ textDecoration: 'none', color: '#1c0e52' }}
                       target='_top'
                     >

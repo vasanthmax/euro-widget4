@@ -161,7 +161,15 @@ const Widget2 = () => {
       </div>
       <div className='back'>
         <div className='back-button'>
-          <Link to={`/${lang}`}>
+          <Link
+            to={
+              bannersport === 'rowing'
+                ? `/${lang}?lang=${lang}&sport=rowing`
+                : bannersport === 'athletics'
+                ? `/${lang}?lang=${lang}&sport=rowing`
+                : `/${lang}`
+            }
+          >
             {' '}
             <img
               src={
@@ -270,7 +278,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/11`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/11?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/11?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/11`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>11</h2>
@@ -279,7 +293,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/12`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/12?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/12?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/12`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>12</h2>
@@ -288,7 +308,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/13`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/13?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/13?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/13`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>13</h2>
@@ -297,7 +323,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/14`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/14?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/14?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/14`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>14</h2>
@@ -306,7 +338,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/15`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/15?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/15?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/15`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>15</h2>
@@ -315,7 +353,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/16`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/16?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/16?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/16`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>16</h2>
@@ -324,7 +368,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/17`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/17?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/17?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/17`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>17</h2>
@@ -333,7 +383,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/18`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/18?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/18?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/18`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>18</h2>
@@ -342,7 +398,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/19`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/19?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/19?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/19`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>19</h2>
@@ -352,7 +414,13 @@ const Widget2 = () => {
 
           <th>
             <Link
-              to={`/${lang}/date/20`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/20?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/20?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/20`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>20</h2>
@@ -361,7 +429,13 @@ const Widget2 = () => {
           </th>
           <th>
             <Link
-              to={`/${lang}/date/21`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${lang}/date/21?lang=${lang}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${lang}/date/21?lang=${lang}&sport=athletics`
+                  : `/${lang}/date/21`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>21</h2>
@@ -445,7 +519,13 @@ const Widget2 = () => {
                 </th>
                 <th className='date'>
                   <Link
-                    to={`/${lang}/date/${date}`}
+                    to={
+                      bannersport === 'rowing'
+                        ? `/${lang}/date/${date}?lang=${lang}&sport=rowing`
+                        : bannersport === 'athletics'
+                        ? `/${lang}/date/${date}?lang=${lang}&sport=athletics`
+                        : `/${lang}/date/${date}`
+                    }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                   >
                     {`${StaticArray[0][weekday][lang]} `}

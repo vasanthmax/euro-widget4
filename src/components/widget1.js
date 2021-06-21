@@ -222,7 +222,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/11`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/11?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/11?lang=${location}&sport=athletics`
+                  : `/${location}/date/11`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>11</h2>
@@ -231,7 +237,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/12`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/12?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/12?lang=${location}&sport=athletics`
+                  : `/${location}/date/12`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>12</h2>
@@ -240,7 +252,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/13`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/13?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/13?lang=${location}&sport=athletics`
+                  : `/${location}/date/13`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>13</h2>
@@ -249,7 +267,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/14`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/14?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/14?lang=${location}&sport=athletics`
+                  : `/${location}/date/14`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>14</h2>
@@ -258,7 +282,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/15`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/15?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/15?lang=${location}&sport=athletics`
+                  : `/${location}/date/15`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>15</h2>
@@ -267,7 +297,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/16`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/16?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/16?lang=${location}&sport=athletics`
+                  : `/${location}/date/16`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>16</h2>
@@ -276,7 +312,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/17`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/17?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/17?lang=${location}&sport=athletics`
+                  : `/${location}/date/17`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>17</h2>
@@ -285,7 +327,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/18`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/18?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/18?lang=${location}&sport=athletics`
+                  : `/${location}/date/18`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>18</h2>
@@ -294,7 +342,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/19`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/19?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/19?lang=${location}&sport=athletics`
+                  : `/${location}/date/19`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>19</h2>
@@ -304,7 +358,13 @@ const Widget1 = () => {
 
           <th>
             <Link
-              to={`/${location}/date/20`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/20?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/20?lang=${location}&sport=athletics`
+                  : `/${location}/date/20`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>20</h2>
@@ -313,7 +373,13 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/${location}/date/21`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/21?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/21?lang=${location}&sport=athletics`
+                  : `/${location}/date/21`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>21</h2>
@@ -365,7 +431,13 @@ const Widget1 = () => {
                     //     ? 'beach-volleyball'
                     //     : ch.sport.toLowerCase().replace(' ', '-')
                     // }#widget-02`}
-                    href={`${location}/sport/${discipline}`}
+                    href={
+                      bannersport === 'rowing'
+                        ? `${location}/sport/${discipline}?lang=${location}&sport=rowing`
+                        : bannersport === 'athletics'
+                        ? `${location}/sport/${discipline}?lang=${location}&sport=athletics`
+                        : `${location}/sport/${discipline}`
+                    }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
                   >
@@ -387,7 +459,13 @@ const Widget1 = () => {
           <th>{StaticArray[0]['Venue'][location].toUpperCase()}</th>
           <th className='date'>
             <Link
-              to={`/${location}/date/${date}`}
+              to={
+                bannersport === 'rowing'
+                  ? `/${location}/date/${date}?lang=${location}&sport=rowing`
+                  : bannersport === 'athletics'
+                  ? `/${location}/date/${date}?lang=${location}&sport=athletics`
+                  : `/${location}/date/${date}`
+              }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               {date} AUG
@@ -414,7 +492,14 @@ const Widget1 = () => {
                     //     ? 'beach-volleyball'
                     //     : vs.sport.toLowerCase().replace(' ', '-')
                     // }#widget-02`}
-                    href={`/${location}/sport/${discipline}`}
+
+                    href={
+                      bannersport === 'rowing'
+                        ? `${location}/sport/${discipline}?lang=${location}&sport=rowing`
+                        : bannersport === 'athletics'
+                        ? `${location}/sport/${discipline}?lang=${location}&sport=athletics`
+                        : `${location}/sport/${discipline}`
+                    }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
                   >
