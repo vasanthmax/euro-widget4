@@ -11,7 +11,15 @@ import RoutingPath from '../constants/routingconstants';
 
 const Widget2 = () => {
   const dispatch = useDispatch();
-  const lang = new URLSearchParams(window.location.search).get('lang');
+  const lang = window.location.pathname.split('/')[1];
+  const bannersport = new URLSearchParams(window.location.search).get('sport');
+  const bannerHeaderDesktop = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/desktop/${lang}/desktop_header_${lang}_${
+    bannersport === 'rowing'
+      ? 'rowing'
+      : bannersport === 'athletics'
+      ? 'athletics'
+      : 'default'
+  }.svg`;
   console.log(lang);
   useEffect(() => {
     console.log('...loding');
@@ -20,11 +28,11 @@ const Widget2 = () => {
   const data = useSelector((state) => state.sportReducer.sport);
 
   console.log(data);
-  let URLSport = new URLSearchParams(window.location.search).get('sport');
+  let URLSport = window.location.pathname.split('/').pop();
   let sport = RoutingPath[0][URLSport][lang];
   console.log(sport);
 
-  let sportIcons = new URLSearchParams(window.location.search).get('sport');
+  let sportIcons = window.location.pathname.split('/').pop();
   if (
     sportIcons == 'cyclingmountainbike' ||
     sportIcons == 'cyclingbmxfreestyle' ||
@@ -135,6 +143,24 @@ const Widget2 = () => {
 
   return (
     <div className='widget2'>
+      <div className='bannerheader'>
+        <img src={bannerHeaderDesktop} alt='' />
+      </div>
+      <div className='back'>
+        <div className='back-button'>
+          <Link to={`/${lang}`}>
+            {' '}
+            <img
+              src={
+                'https://d156xmnjzkwf2j.cloudfront.net/SPW/Other_elements/SVG/back_button.svg'
+              }
+              alt=''
+            />
+          </Link>
+        </div>
+
+        <p>BACK TO FULL PROGRAMME</p>
+      </div>
       <div className='header'>
         <img id='pitco' src={baseUrlPicto} alt='' />
         <div className='sportdetails'>
@@ -406,7 +432,7 @@ const Widget2 = () => {
                 </th>
                 <th className='date'>
                   <Link
-                    to={`/date/${date}`}
+                    to={`/${lang}/date/${date}`}
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                   >
                     {`${StaticArray[0][weekday][lang]} `}

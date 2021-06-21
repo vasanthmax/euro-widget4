@@ -10,7 +10,15 @@ import Routing from '../constants/routing';
 import RoutingPath from '../constants/routingconstants';
 
 const Widget1 = () => {
-  const location = new URLSearchParams(window.location.search).get('lang');
+  const location = window.location.pathname.split('/')[1];
+  const bannersport = new URLSearchParams(window.location.search).get('sport');
+  const bannerHeaderDesktop = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/desktop/${location}/desktop_header_${location}_${
+    bannersport === 'rowing'
+      ? 'rowing'
+      : bannersport === 'athletics'
+      ? 'athletics'
+      : 'default'
+  }.svg`;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(sportApi(location));
@@ -162,6 +170,9 @@ const Widget1 = () => {
 
   return (
     <div className='widget1'>
+      <div className='header'>
+        <img src={bannerHeaderDesktop} alt='' />
+      </div>
       <div className='month'>
         <h2>{StaticArray[0]['August'][location].toUpperCase()}</h2>
       </div>
@@ -198,7 +209,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=11`}
+              to={`/${location}/date/11`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>11</h2>
@@ -207,7 +218,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=12`}
+              to={`/${location}/date/12`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>12</h2>
@@ -216,7 +227,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=13`}
+              to={`/${location}/date/13`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>13</h2>
@@ -225,7 +236,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=14`}
+              to={`/${location}/date/14`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>14</h2>
@@ -234,7 +245,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=15`}
+              to={`/${location}/date/15`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>15</h2>
@@ -243,7 +254,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=16`}
+              to={`/${location}/date/16`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>16</h2>
@@ -252,7 +263,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=17`}
+              to={`/${location}/date/17`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>17</h2>
@@ -261,7 +272,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=18`}
+              to={`/${location}/date/18`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>18</h2>
@@ -270,7 +281,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=19`}
+              to={`/${location}/date/19`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>19</h2>
@@ -280,7 +291,7 @@ const Widget1 = () => {
 
           <th>
             <Link
-              to={`/day?lang=${location}&date=20`}
+              to={`/${location}/date/20`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>20</h2>
@@ -289,7 +300,7 @@ const Widget1 = () => {
           </th>
           <th>
             <Link
-              to={`/day?lang=${location}&date=21`}
+              to={`/${location}/date/21`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               <h2>21</h2>
@@ -341,7 +352,7 @@ const Widget1 = () => {
                     //     ? 'beach-volleyball'
                     //     : ch.sport.toLowerCase().replace(' ', '-')
                     // }#widget-02`}
-                    href={`/sport/?lang=${location}&sport=${discipline}`}
+                    href={`${location}/sport/${discipline}`}
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
                   >
@@ -362,7 +373,7 @@ const Widget1 = () => {
           <th>{StaticArray[0]['Venue'][location].toUpperCase()}</th>
           <th className='date'>
             <Link
-              to={`/day?lang=${location}&date=${date}`}
+              to={`/${location}/date/${date}`}
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
               {date} AUG
@@ -389,7 +400,7 @@ const Widget1 = () => {
                     //     ? 'beach-volleyball'
                     //     : vs.sport.toLowerCase().replace(' ', '-')
                     // }#widget-02`}
-                    href={`/sport?lang=${location}&sport=${discipline}`}
+                    href={`/${location}/sport/${discipline}`}
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
                   >

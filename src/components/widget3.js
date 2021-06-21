@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { createEvent } from 'ics';
 import ConstantSport from '../constants/constantSport';
 import StaticArray from '../constants/staticWords';
+import Routing from '../constants/routing';
 const Widget3 = () => {
   const calendar =
     'https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Other_elements/PNG/calendar.png';
@@ -19,7 +20,15 @@ const Widget3 = () => {
     'https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Other_elements/SVG/chevron_right.svg';
   const leftArrow =
     'https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Other_elements/SVG/chevron_left.svg';
-  const lang = new URLSearchParams(window.location.search).get('lang');
+  const lang = window.location.pathname.split('/')[1];
+  const bannersport = new URLSearchParams(window.location.search).get('sport');
+  const bannerHeaderDesktop = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/desktop/${lang}/desktop_header_${lang}_${
+    bannersport === 'rowing'
+      ? 'rowing'
+      : bannersport === 'athletics'
+      ? 'athletics'
+      : 'default'
+  }.svg`;
   const dispatch = useDispatch();
   useEffect(() => {
     console.log('...loding');
@@ -33,7 +42,7 @@ const Widget3 = () => {
   const [isClicked, setIsClicked] = useState('');
 
   const [fDate, setfDate] = useState(
-    parseInt(new URLSearchParams(window.location.search).get('date'))
+    parseInt(window.location.pathname.split('/').pop())
   );
   const filterByDate = data.filter(
     (ch) =>
@@ -371,6 +380,24 @@ const Widget3 = () => {
   console.log(week);
   return (
     <div className='widget3'>
+      <div className='bannerheader'>
+        <img src={bannerHeaderDesktop} alt='' />
+      </div>
+      <div className='back'>
+        <div className='back-button'>
+          <Link to={`/${lang}`}>
+            {' '}
+            <img
+              src={
+                'https://d156xmnjzkwf2j.cloudfront.net/SPW/Other_elements/SVG/back_button.svg'
+              }
+              alt=''
+            />
+          </Link>
+        </div>
+
+        <p>BACK TO FULL PROGRAMME</p>
+      </div>
       <div className='header'>
         <div className='date-carousel'>
           <img
@@ -592,16 +619,18 @@ const Widget3 = () => {
               }
             };
             showInMunichTime();
+            const disciplineRoute = Routing(ch.discipline);
             return (
               <tr>
                 <th className='sport'>
                   {' '}
                   <a
-                    href={`https://www.europeanchampionships.com/${
-                      ch.sport === 'Canoe'
-                        ? 'canoe-sprint'
-                        : ch.sport.toLowerCase().replace(' ', '-')
-                    }#widget-02`}
+                    // href={`https://www.europeanchampionships.com/${
+                    //   ch.sport === 'Canoe'
+                    //     ? 'canoe-sprint'
+                    //     : ch.sport.toLowerCase().replace(' ', '-')
+                    // }#widget-02`}
+                    href={`/${lang}/sport/${disciplineRoute}`}
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
                   >
@@ -717,16 +746,18 @@ const Widget3 = () => {
               }
             };
             showInMunichTime();
+            const disciplineRoute = Routing(ch.discipline);
             return (
               <div className='table-row'>
                 <tr>
                   <th className='event'>
                     <a
-                      href={`https://www.europeanchampionships.com/${
-                        ch.sport === 'Canoe'
-                          ? 'canoe-sprint'
-                          : ch.sport.toLowerCase().replace(' ', '-')
-                      }#widget-02`}
+                      // href={`https://www.europeanchampionships.com/${
+                      //   ch.sport === 'Canoe'
+                      //     ? 'canoe-sprint'
+                      //     : ch.sport.toLowerCase().replace(' ', '-')
+                      // }#widget-02`}
+                      href={`/${lang}/sport/${disciplineRoute}`}
                       style={{ textDecoration: 'none', color: '#1c0e52' }}
                       target='_top'
                     >
