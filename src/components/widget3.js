@@ -121,13 +121,8 @@ const Widget3 = () => {
       dropdownlist.push(gender);
     }
   }
-  const dropdown2 = [];
-  for (let i = 0; i < filterByDate.length; i++) {
-    const medal = filterByDate[i].medal;
-    if (dropdown2.indexOf(medal) === -1) {
-      dropdown2.push(medal);
-    }
-  }
+  const dropdown2 = [StaticArray[0]['Yes'][lang], StaticArray[0]['No'][lang]];
+  const [medalValue, setMedalValue] = useState('No Filter Selected');
   const [gender, setGender] = useState('No Filter Selected');
   const [medal, setMedal] = useState('No Filter Selected');
   const [sport, setSport] = useState('No Filter Selected');
@@ -523,12 +518,23 @@ const Widget3 = () => {
           <Dropdown
             options={dropdown2}
             onChange={(e) => {
-              setMedal(e.value);
+              if (e.value == 'ALLES' || e.value == 'TOUS' || e.value == 'All') {
+                setMedal('All');
+                setMedalValue(e.value);
+              }
+              if (e.value == 'Yes' || e.value == 'OUI' || e.value == 'JA') {
+                setMedal('Yes');
+                setMedalValue(e.value);
+              }
+              if (e.value == 'No' || e.value == 'NON' || e.value == 'NEIN') {
+                setMedal('No');
+                setMedalValue(e.value);
+              }
             }}
             value={
-              medal === 'No Filter Selected'
+              medalValue === 'No Filter Selected'
                 ? `${StaticArray[0]['MedalEvent'][lang].toUpperCase()}`
-                : medal
+                : medalValue
             }
             placeholder='Select an option'
           />
@@ -549,7 +555,14 @@ const Widget3 = () => {
               ''
             ) : (
               <p>
-                <span onClick={() => setMedal('No Filter Selected')}>x</span>
+                <span
+                  onClick={() => {
+                    setMedal('No Filter Selected');
+                    setMedalValue('No Filter Selected');
+                  }}
+                >
+                  x
+                </span>
                 {`${StaticArray[0]['MedalEvent'][lang].toUpperCase()}-${medal}`}
               </p>
             )}

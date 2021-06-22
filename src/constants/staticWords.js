@@ -161,6 +161,21 @@ const StaticArray = [
       de: '*Alle Uhrzeiten sind Deine lokale Zeiten.',
       fr: '*Toutes les heures en heure locale.',
     },
+    Yes: {
+      en: 'Yes',
+      fr: 'OUI',
+      de: 'JA',
+    },
+    No: {
+      en: 'No',
+      fr: 'NON',
+      de: 'NEIN',
+    },
+    all: {
+      en: 'All',
+      fr: 'TOUS',
+      de: 'ALLES',
+    },
   },
 ];
 
