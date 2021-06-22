@@ -1,4 +1,10 @@
 .widget1 {
+  .header-mobile {
+    display: none;
+  }
+  .footer-mobile {
+    display: none;
+  }
   .footer {
     width: 80%;
     margin-left: auto;
@@ -106,6 +112,48 @@
     overflow-x: hidden;
   }
   @media screen and (max-width: 992px) {
+    .header-mobile {
+      display: block;
+    }
+    .header {
+      display: none;
+      width: 100%;
+    }
+    .footer {
+      display: none;
+    }
+    .footer-mobile {
+      margin-top: 10px;
+      display: block;
+      padding: 5px 10px 5px 10px;
+      width: 100%;
+      background-repeat: no-repeat;
+      display: flex;
+      background-size: cover;
+      align-items: center;
+      justify-content: space-between;
+
+      .web-route {
+        a {
+          text-decoration: none;
+        }
+        p {
+          color: #ffffff;
+          font-size: 14px;
+        }
+      }
+      ul {
+        text-decoration: none;
+        list-style: none;
+        display: flex;
+        li {
+          margin-right: 15px;
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
     .content-table {
       display: none;
     }

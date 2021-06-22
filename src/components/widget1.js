@@ -25,7 +25,21 @@ const Widget1 = () => {
       ? 'athletics'
       : 'default'
   }.svg`;
+  const bannerMobileHeader = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/mobile/en/mobile_header_${location}_${
+    bannersport === 'rowing'
+      ? 'rowing'
+      : bannersport === 'athletics'
+      ? 'athletics'
+      : 'default'
+  }.svg`;
   const bannerFooter = `https://d156xmnjzkwf2j.cloudfront.net/SPW/footer/desktop/no_text_and_icons/desktop_footer_${
+    bannersport === 'rowing'
+      ? 'rowing'
+      : bannersport === 'athletics'
+      ? 'athletics'
+      : 'default'
+  }.svg`;
+  const bannerFooterMobile = `https://d156xmnjzkwf2j.cloudfront.net/SPW/footer/mobile/no_text_and_icons/mobile_footer-${
     bannersport === 'rowing'
       ? 'rowing'
       : bannersport === 'athletics'
@@ -183,6 +197,9 @@ const Widget1 = () => {
 
   return (
     <div className='widget1'>
+      <div className='header-mobile'>
+        <img src={bannerMobileHeader} alt='' />
+      </div>
       <div className='header'>
         <img src={bannerHeaderDesktop} alt='' />
       </div>
@@ -530,6 +547,36 @@ const Widget1 = () => {
         <div className='web-route'>
           <a href='https://www.europeanchampionships.com/' target='_top'>
             <p>europeanchampionships.com&nbsp;&nbsp;&nbsp;|</p>
+          </a>
+          <a href='https://www.munich2022.com/' target='_top'>
+            <p>munich2022.com</p>
+          </a>
+        </div>
+        <ul>
+          <li>
+            <a href='https://www.instagram.com/munich2022/' target='_top'>
+              <img src={instagramIcon} alt='' />
+            </a>
+          </li>
+          <li>
+            <a href='https://www.facebook.com/ECMunich2022/' target='_top'>
+              <img src={facebookIcon} alt='' />
+            </a>
+          </li>
+          <li>
+            <a href='https://twitter.com/ecmunich2022' target='_top'>
+              <img src={twitterIcon} alt='' />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        className='footer-mobile'
+        style={{ backgroundImage: `url(${bannerFooterMobile})` }}
+      >
+        <div className='web-route'>
+          <a href='https://www.europeanchampionships.com/' target='_top'>
+            <p>europeanchampionships.com</p>
           </a>
           <a href='https://www.munich2022.com/' target='_top'>
             <p>munich2022.com</p>
