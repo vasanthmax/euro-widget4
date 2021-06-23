@@ -26,7 +26,7 @@ const Widget3 = () => {
     'https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Other_elements/SVG/chevron_right.svg';
   const leftArrow =
     'https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Other_elements/SVG/chevron_left.svg';
-  const lang = window.location.pathname.split('/')[1];
+  const lang = new URLSearchParams(window.location.search).get('lang');
   const bannersport = new URLSearchParams(window.location.search).get('sport');
   const bannerHeaderDesktop = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/desktop/${lang}/desktop_header_${lang}_${
     bannersport === 'rowing'
@@ -415,8 +415,8 @@ const Widget3 = () => {
               bannersport === 'rowing'
                 ? `/${lang}?lang=${lang}&sport=rowing`
                 : bannersport === 'athletics'
-                ? `/${lang}?lang=${lang}&sport=rowing`
-                : `/${lang}`
+                ? `/${lang}?lang=${lang}&sport=athletics`
+                : `/?lang=${lang}`
             }
           >
             {' '}
@@ -683,10 +683,10 @@ const Widget3 = () => {
                     // }#widget-02`}
                     href={
                       bannersport === 'rowing'
-                        ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
+                        ? `/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
                         : bannersport === 'athletics'
-                        ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
-                        : `/${lang}/sport/${disciplineRoute}`
+                        ? `/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
+                        : `/sport/${disciplineRoute}?lang=${lang}`
                     }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
@@ -816,10 +816,10 @@ const Widget3 = () => {
                       // }#widget-02`}
                       href={
                         bannersport === 'rowing'
-                          ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
+                          ? `/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
                           : bannersport === 'athletics'
-                          ? `/${lang}/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
-                          : `/${lang}/sport/${disciplineRoute}`
+                          ? `/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
+                          : `/sport/${disciplineRoute}?lang=${lang}`
                       }
                       style={{ textDecoration: 'none', color: '#1c0e52' }}
                       target='_top'

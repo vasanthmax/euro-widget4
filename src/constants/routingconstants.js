@@ -36,7 +36,7 @@ const RoutingPath = [
       fr: 'Cyclisme BMX Freestyle',
     },
     gymnastics: {
-      en: 'Artistic Gymnastics',
+      en: 'Gymnastics Artistic',
       de: 'Artistische Gymnastik',
       fr: 'Gymnastique artistique',
     },

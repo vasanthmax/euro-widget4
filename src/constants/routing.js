@@ -42,7 +42,7 @@ const Routing = (sport) => {
     return 'cyclingbmxfreestyle';
   }
   if (
-    sport == 'Artistic Gymnastics' ||
+    sport == 'Gymnastics Artistic' ||
     sport == 'Gymnastique artistique' ||
     sport == 'Artistische Gymnastik'
   ) {

@@ -42,7 +42,7 @@ const ConstantSport = (sport) => {
     return 'cycling';
   }
   if (
-    sport == 'Artistic Gymnastics' ||
+    sport == 'Gymnastics Artistic' ||
     sport == 'Gymnastique artistique' ||
     sport == 'Artistische Gymnastik'
   ) {

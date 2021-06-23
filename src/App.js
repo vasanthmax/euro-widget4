@@ -16,9 +16,9 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Switch>
-          <Route path='/:id' component={Widget1} exact />
-          <Route path='/:id/sport/:id' component={Widget2} />
-          <Route path='/:id/date/:id' component={Widget3}></Route>
+          <Route path='/' component={Widget1} exact />
+          <Route path='/sport/:id' component={Widget2} />
+          <Route path='/date/:id' component={Widget3}></Route>
         </Switch>
       </BrowserRouter>
     </div>

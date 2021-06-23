@@ -16,7 +16,7 @@ const Widget1 = () => {
     'https://d156xmnjzkwf2j.cloudfront.net/SPW/social_media_icons/instagram.png';
   const twitterIcon =
     'https://d156xmnjzkwf2j.cloudfront.net/SPW/social_media_icons/twitter.png';
-  const location = window.location.pathname.split('/')[1];
+  const location = new URLSearchParams(window.location.search).get('lang');
   const bannersport = new URLSearchParams(window.location.search).get('sport');
   const bannerHeaderDesktop = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/desktop/${location}/desktop_header_${location}_${
     bannersport === 'rowing'
@@ -194,7 +194,9 @@ const Widget1 = () => {
       });
     }
   }
-
+  sportDis.sort(function (a, b) {
+    return a.discipline.localeCompare(b.discipline);
+  });
   return (
     <div className='widget1'>
       <div className='header-mobile'>
@@ -241,10 +243,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/11?lang=${location}&sport=rowing`
+                  ? `/date/11?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/11?lang=${location}&sport=athletics`
-                  : `/${location}/date/11`
+                  ? `/date/11?lang=${location}&sport=athletics`
+                  : `/date/11?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -256,10 +258,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/12?lang=${location}&sport=rowing`
+                  ? `/date/12?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/12?lang=${location}&sport=athletics`
-                  : `/${location}/date/12`
+                  ? `/date/12?lang=${location}&sport=athletics`
+                  : `/date/12?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -271,10 +273,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/13?lang=${location}&sport=rowing`
+                  ? `/date/13?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/13?lang=${location}&sport=athletics`
-                  : `/${location}/date/13`
+                  ? `/date/13?lang=${location}&sport=athletics`
+                  : `/date/13?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -286,10 +288,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/14?lang=${location}&sport=rowing`
+                  ? `/date/14?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/14?lang=${location}&sport=athletics`
-                  : `/${location}/date/14`
+                  ? `/date/14?lang=${location}&sport=athletics`
+                  : `/date/14?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -301,10 +303,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/15?lang=${location}&sport=rowing`
+                  ? `/date/15?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/15?lang=${location}&sport=athletics`
-                  : `/${location}/date/15`
+                  ? `/date/15?lang=${location}&sport=athletics`
+                  : `/date/15?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -316,10 +318,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/16?lang=${location}&sport=rowing`
+                  ? `/date/16?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/16?lang=${location}&sport=athletics`
-                  : `/${location}/date/16`
+                  ? `/date/16?lang=${location}&sport=athletics`
+                  : `/date/16?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -331,10 +333,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/17?lang=${location}&sport=rowing`
+                  ? `/date/17?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/17?lang=${location}&sport=athletics`
-                  : `/${location}/date/17`
+                  ? `/date/17?lang=${location}&sport=athletics`
+                  : `/date/17?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -346,10 +348,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/18?lang=${location}&sport=rowing`
+                  ? `/date/18?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/18?lang=${location}&sport=athletics`
-                  : `/${location}/date/18`
+                  ? `/date/18?lang=${location}&sport=athletics`
+                  : `/date/18?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -361,10 +363,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/19?lang=${location}&sport=rowing`
+                  ? `/date/19?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/19?lang=${location}&sport=athletics`
-                  : `/${location}/date/19`
+                  ? `/date/19?lang=${location}&sport=athletics`
+                  : `/date/19?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -377,10 +379,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/20?lang=${location}&sport=rowing`
+                  ? `/date/20?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/20?lang=${location}&sport=athletics`
-                  : `/${location}/date/20`
+                  ? `/date/20?lang=${location}&sport=athletics`
+                  : `/date/20?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -392,10 +394,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/21?lang=${location}&sport=rowing`
+                  ? `/date/21?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/21?lang=${location}&sport=athletics`
-                  : `/${location}/date/21`
+                  ? `/date/21?lang=${location}&sport=athletics`
+                  : `/date/21?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -450,10 +452,10 @@ const Widget1 = () => {
                     // }#widget-02`}
                     href={
                       bannersport === 'rowing'
-                        ? `${location}/sport/${discipline}?lang=${location}&sport=rowing`
+                        ? `/sport/${discipline}?lang=${location}&sport=rowing`
                         : bannersport === 'athletics'
-                        ? `${location}/sport/${discipline}?lang=${location}&sport=athletics`
-                        : `${location}/sport/${discipline}`
+                        ? `/sport/${discipline}?lang=${location}&sport=athletics`
+                        : `/sport/${discipline}?lang=${location}`
                     }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
@@ -478,10 +480,10 @@ const Widget1 = () => {
             <Link
               to={
                 bannersport === 'rowing'
-                  ? `/${location}/date/${date}?lang=${location}&sport=rowing`
+                  ? `/date/${date}?lang=${location}&sport=rowing`
                   : bannersport === 'athletics'
-                  ? `/${location}/date/${date}?lang=${location}&sport=athletics`
-                  : `/${location}/date/${date}`
+                  ? `/date/${date}?lang=${location}&sport=athletics`
+                  : `/date/${date}?lang=${location}`
               }
               style={{ textDecoration: 'none', color: '#ffffff' }}
             >
@@ -512,10 +514,10 @@ const Widget1 = () => {
 
                     href={
                       bannersport === 'rowing'
-                        ? `${location}/sport/${discipline}?lang=${location}&sport=rowing`
+                        ? `/sport/${discipline}?lang=${location}&sport=rowing`
                         : bannersport === 'athletics'
-                        ? `${location}/sport/${discipline}?lang=${location}&sport=athletics`
-                        : `${location}/sport/${discipline}`
+                        ? `/sport/${discipline}?lang=${location}&sport=athletics`
+                        : `/sport/${discipline}?lang=${location}`
                     }
                     style={{ textDecoration: 'none', color: '#1c0e52' }}
                     target='_top'
