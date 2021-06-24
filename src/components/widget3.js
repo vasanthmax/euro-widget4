@@ -70,6 +70,7 @@ const Widget3 = () => {
   }
   data = useSelector((state) => state.sportReducer.sport);
   const [isClicked, setIsClicked] = useState('');
+  const [nofilter, setNofilter] = useState('');
 
   const [fDate, setfDate] = useState(
     parseInt(window.location.pathname.split('/').pop())
@@ -188,68 +189,94 @@ const Widget3 = () => {
       sport === 'No Filter Selected'
     ) {
       const filterbyUser = setFilteredData(filterByDate);
-    }
-    if (gender === 'No Filter Selected' && medal == 'No Filter Selected') {
+    } else if (
+      gender === 'No Filter Selected' &&
+      medal == 'No Filter Selected' &&
+      sport !== 'No Filter Selected'
+    ) {
       const filterbyUser = filterByDate.filter((ch) => ch.discipline === sport);
       if (filterbyUser.length === 0) {
+        setNofilter('no');
         console.log(`10 is not Available`);
       } else {
         setFilteredData(filterbyUser);
+        setNofilter('');
         console.log('data acquired');
       }
-    }
-    if (medal === 'No Filter Selected' && sport === 'No Filter Selected') {
+    } else if (
+      medal === 'No Filter Selected' &&
+      sport === 'No Filter Selected' &&
+      gender !== 'No Filter Selected'
+    ) {
       const filterbyUser = filterByDate.filter((ch) => ch.gender === gender);
       if (filterbyUser.length === 0) {
+        setNofilter('no');
+
         console.log(`9 is not Available`);
       } else {
         setFilteredData(filterbyUser);
+        setNofilter('');
       }
-    }
-
-    if (gender === 'No Filter Selected' && sport === 'No Filter Selected') {
+    } else if (
+      gender === 'No Filter Selected' &&
+      sport === 'No Filter Selected' &&
+      medal !== 'No Filter Selected'
+    ) {
       const filterbyUser = filterByDate.filter((ch) => ch.medal === medal);
       if (filterbyUser.length === 0) {
         console.log(`8 is not Available`);
+        setNofilter('no');
       } else {
         setFilteredData(filterbyUser);
+        setNofilter('');
       }
-    }
-
-    if (gender === 'No Filter Selected') {
+    } else if (
+      gender === 'No Filter Selected' &&
+      medal !== 'No Filter Selected' &&
+      sport !== 'No Filter Selected'
+    ) {
       const filterbyUser = filterByDate.filter(
         (ch) => ch.discipline == sport && ch.medal == medal
       );
       if (filterbyUser.length === 0) {
         console.log(`7 is not Available`);
+        setNofilter('no');
       } else {
         setFilteredData(filterbyUser);
+        setNofilter('');
       }
-    }
-
-    if (medal === 'No Filter Selected') {
+    } else if (
+      gender !== 'No Filter Selected' &&
+      medal == 'No Filter Selected' &&
+      sport !== 'No Filter Selected'
+    ) {
       const filterbyUser = filterByDate.filter(
         (ch) => ch.gender === gender && ch.discipline == sport
       );
       if (filterbyUser.length === 0) {
+        setNofilter('no');
+
         console.log(`6 is not Available`);
       } else {
         setFilteredData(filterbyUser);
+        setNofilter('');
       }
-    }
-
-    if (sport === 'No Filter Selected') {
+    } else if (
+      gender !== 'No Filter Selected' &&
+      medal !== 'No Filter Selected' &&
+      sport == 'No Filter Selected'
+    ) {
       const filterbyUser = filterByDate.filter(
         (ch) => ch.gender == gender && ch.medal === medal
       );
       if (filterbyUser.length === 0) {
         console.log(`5 is not Available`);
+        setNofilter('no');
       } else {
         setFilteredData(filterbyUser);
+        setNofilter('');
       }
-    }
-
-    if (
+    } else if (
       gender !== 'No Filter Selected' &&
       sport !== 'No Filter Selected' &&
       medal !== 'No Filter Selected'
@@ -259,81 +286,21 @@ const Widget3 = () => {
           ch.gender == gender && ch.discipline == sport && ch.medal == medal
       );
       if (filterbyUser.length === 0) {
+        setNofilter('no');
         console.log(`4 is not Available`);
       } else {
         setFilteredData(filterbyUser);
-      }
-    } else if (gender && sport && medal) {
-      const filterbyUser = filterByDate.filter(
-        (ch) => ch.gender == gender && ch.discipline == sport
-      );
-      if (filterbyUser.length === 0) {
-        console.log(`3 is not Available`);
-      } else {
-        setFilteredData(filterbyUser);
-      }
-    } else if (sport && medal) {
-      const filterbyUser = filterByDate.filter(
-        (ch) => ch.discipline == sport && ch.medal == medal
-      );
-      if (filterbyUser.length === 0) {
-        console.log(`2 is not Available`);
-      } else if (gender && medal) {
-        const filterbyUser = filterByDate.filter(
-          (ch) => ch.gender == gender && ch.medal == medal
-        );
-        if (filterbyUser.length === 0) {
-          console.log(`1 is not Available`);
-        }
-      } else {
-        setFilteredData(filterbyUser);
+        setNofilter('');
       }
     }
-
-    // if (sport) {
-    //   const filterbyUser = filterByDate.filter((ch) => ch.discipline === sport);
-    //   if (filterbyUser.length === 0) {
-    //     console.log(`${gender} is not Available`);
-    //   } else {
-    //     setFilteredData(filterbyUser);
-    //   }
-    // }
-
-    // if (gender && sport && medal == 'All') {
-    //   const filterbyUser = filterByDate.filter(
-    //     (ch) => ch.gender == gender && ch.sport === sport
-    //   );
-    //   if (filterbyUser.length === 0) {
-    //     console.log(`${gender} is not Available`);
-    //   } else {
-    //     setFilteredData(filterbyUser);
-    //   }
-    // }
-    // if (sport && medal == 'All') {
-    //   const filterbyUser = filterByDate.filter((ch) => ch.sport === sport);
-    //   if (filterbyUser.length === 0) {
-    //     console.log(`${gender} is not Available`);
-    //   } else {
-    //     setFilteredData(filterbyUser);
-    //   }
-    // }
-
-    // if (gender && medal == 'All') {
-    //   const filterbyUser = filterByDate.filter((ch) => ch.gender === gender);
-    //   if (filterbyUser.length === 0) {
-    //     console.log(`${gender} is not Available`);
-    //   } else {
-    //     setFilteredData(filterbyUser);
-    //   }
-    // }
   };
 
   useEffect(() => {
     WeekDay();
     sportListUpdate();
-    setGender('No Filter Selected');
-    setMedal('No Filter Selected');
-    setSport('No Filter Selected');
+    // setGender('No Filter Selected');
+    // setMedal('No Filter Selected');
+    // setSport('No Filter Selected');
   }, [fDate]);
   useEffect(() => {
     genderFilter();
@@ -603,231 +570,101 @@ const Widget3 = () => {
           </p>
         </div>
       </div>
-      <div className='time-zone'>
-        <p>
-          {`${
-            isClicked === 'clicked'
-              ? StaticArray[0]['alocaltime'][lang]
-              : StaticArray[0]['amunichtime'][lang]
-          }`}
-          {isClicked === 'clicked' ? (
-            <span onClick={() => setIsClicked('')}>
-              {StaticArray[0]['smunichtime'][lang]}
-            </span>
-          ) : (
-            <span onClick={() => setIsClicked('clicked')}>
-              {StaticArray[0]['slocaltime'][lang]}
-            </span>
-          )}
-        </p>
-      </div>
-      <table className='date-event-table'>
-        <thead>
-          <th>{StaticArray[0]['Sport'][lang].toUpperCase()}</th>
-          <th>{StaticArray[0]['Eventname'][lang].toUpperCase()}</th>
-          <th>{StaticArray[0]['time'][lang]}</th>
-          <th>{StaticArray[0]['Medal'][lang].toUpperCase()}</th>
-          <th>{StaticArray[0]['Venue'][lang].toUpperCase()}</th>
-          <th className='addTo'>
-            {StaticArray[0]['AddTo'][lang].toUpperCase()}{' '}
-            <img src={calendar} alt='' />
-          </th>
-        </thead>
-        <tbody>
-          {filteredData.map((ch) => {
-            let SportName = ch.sport;
-            let discipline = ch.discipline;
-            let MedalEvent;
-            const sportIcons = ConstantSport(discipline);
-            const baseUrlDot = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Dots/SVG/ec_${sportIcons}_dot_rgb.svg`;
-            const baseUrlMedal = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Medals/SVG/ec_${sportIcons}_medalicon_rgb.svg`;
-
-            if (ch.medal == 'Yes') {
-              MedalEvent = baseUrlMedal;
-            } else {
-              MedalEvent = baseUrlDot;
-            }
-
-            let startTime = new Date(ch.start).toLocaleString('UTC', {
-              timeZone: 'CET',
-              hour: '2-digit',
-              minute: '2-digit',
-            });
-            let endTime = new Date(ch.end).toLocaleString('UTC', {
-              timeZone: 'CET',
-              hour: '2-digit',
-              minute: '2-digit',
-            });
-            const showLocalTime = () => {
-              if (isClicked === 'clicked') {
-                startTime = new Date(ch.start).toLocaleString('default', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-                endTime = new Date(ch.end).toLocaleString('default', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-              }
-            };
-            showLocalTime();
-            const showInMunichTime = () => {
-              if (isClicked === '') {
-                let startTime = new Date(ch.start).toLocaleString('UTC', {
-                  timeZone: 'CET',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-                let endTime = new Date(ch.end).toLocaleString('UTC', {
-                  timeZone: 'CET',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-              }
-            };
-            showInMunichTime();
-            const disciplineRoute = Routing(ch.discipline);
-            return (
-              <tr>
-                <th className='sport'>
-                  {' '}
-                  <a
-                    // href={`https://www.europeanchampionships.com/${
-                    //   ch.sport === 'Canoe'
-                    //     ? 'canoe-sprint'
-                    //     : ch.sport.toLowerCase().replace(' ', '-')
-                    // }#widget-02`}
-                    href={
-                      bannersport === 'rowing'
-                        ? `/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
-                        : bannersport === 'athletics'
-                        ? `/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
-                        : `/sport/${disciplineRoute}?lang=${lang}`
-                    }
-                    style={{ textDecoration: 'none', color: '#1c0e52' }}
-                    target='_top'
-                  >
-                    {ch.discipline}
-                  </a>
-                </th>
-                <th className='event'>{ch.event.split('&#039;').join("'")}</th>
-                <th className='time'>
-                  {startTime} - {endTime}
-                </th>
-                <th className='medal'>
-                  <img src={MedalEvent} alt='' />
-                </th>
-                <th className='venue'>{ch.venue}</th>
-                <th className='calendar'>
-                  <img
-                    src={calendarPlus}
-                    alt=''
-                    onClick={() => {
-                      add(
-                        ch.type,
-                        ch.sport,
-                        ch.discipline,
-                        ch.class,
-                        ch.session,
-                        ch.gender,
-                        ch.phase,
-                        ch.event,
-                        ch.start,
-                        ch.end,
-                        ch.venue,
-                        ch.day,
-                        ch.medal
-                      );
-                      ReactGa.event({
-                        category: 'SPW3',
-                        action: 'Add to Calendar',
-                      });
-                    }}
-                  />
-                </th>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <table className='content-table-mobile'>
-        <thead>
-          <tr>
-            <th className='sport-event'>
-              {StaticArray[0]['Sport'][lang].toUpperCase()} &{' '}
-              {StaticArray[0]['Eventname'][lang].toUpperCase()}
-            </th>
-          </tr>
-          <tr>
+      {nofilter === 'no' ? (
+        ''
+      ) : (
+        <div className='time-zone'>
+          <p>
+            {`${
+              isClicked === 'clicked'
+                ? StaticArray[0]['alocaltime'][lang]
+                : StaticArray[0]['amunichtime'][lang]
+            }`}
+            {isClicked === 'clicked' ? (
+              <span onClick={() => setIsClicked('')}>
+                {StaticArray[0]['smunichtime'][lang]}
+              </span>
+            ) : (
+              <span onClick={() => setIsClicked('clicked')}>
+                {StaticArray[0]['slocaltime'][lang]}
+              </span>
+            )}
+          </p>
+        </div>
+      )}
+      {nofilter === 'no' ? (
+        <p className='nofilter-desktop'>No Data Available</p>
+      ) : (
+        <table className='date-event-table'>
+          <thead>
+            <th>{StaticArray[0]['Sport'][lang].toUpperCase()}</th>
+            <th>{StaticArray[0]['Eventname'][lang].toUpperCase()}</th>
             <th>{StaticArray[0]['time'][lang]}</th>
             <th>{StaticArray[0]['Medal'][lang].toUpperCase()}</th>
             <th>{StaticArray[0]['Venue'][lang].toUpperCase()}</th>
             <th className='addTo'>
-              {StaticArray[0]['AddTo'][lang].toUpperCase()}
+              {StaticArray[0]['AddTo'][lang].toUpperCase()}{' '}
               <img src={calendar} alt='' />
             </th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((ch) => {
-            let SportName = ch.sport;
-            let MedalEvent;
-            let discipline = ch.discipline;
-            const sportIcon = ConstantSport(discipline);
+          </thead>
+          <tbody>
+            {filteredData.map((ch) => {
+              let SportName = ch.sport;
+              let discipline = ch.discipline;
+              let MedalEvent;
+              const sportIcons = ConstantSport(discipline);
+              const baseUrlDot = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Dots/SVG/ec_${sportIcons}_dot_rgb.svg`;
+              const baseUrlMedal = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Medals/SVG/ec_${sportIcons}_medalicon_rgb.svg`;
 
-            const baseUrlDot = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Dots/SVG/ec_${sportIcon}_dot_rgb.svg`;
-            const baseUrlMedal = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Medals/SVG/ec_${sportIcon}_medalicon_rgb.svg`;
-
-            if (ch.medal == 'Yes') {
-              MedalEvent = baseUrlMedal;
-            } else {
-              MedalEvent = baseUrlDot;
-            }
-
-            let startTime = new Date(ch.start).toLocaleString('UTC', {
-              timeZone: 'CET',
-              hour: '2-digit',
-              minute: '2-digit',
-            });
-            let endTime = new Date(ch.end).toLocaleString('UTC', {
-              timeZone: 'CET',
-              hour: '2-digit',
-              minute: '2-digit',
-            });
-            // console.log(startTime);
-            const showLocalTime = () => {
-              if (isClicked === 'clicked') {
-                startTime = new Date(ch.start).toLocaleString('default', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-                endTime = new Date(ch.end).toLocaleString('default', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
+              if (ch.medal == 'Yes') {
+                MedalEvent = baseUrlMedal;
+              } else {
+                MedalEvent = baseUrlDot;
               }
-            };
-            showLocalTime();
-            const showInMunichTime = () => {
-              if (isClicked === '') {
-                let startTime = new Date(ch.start).toLocaleString('UTC', {
-                  timeZone: 'CET',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-                let endTime = new Date(ch.end).toLocaleString('UTC', {
-                  timeZone: 'CET',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-              }
-            };
-            showInMunichTime();
-            const disciplineRoute = Routing(ch.discipline);
-            return (
-              <div className='table-row'>
+
+              let startTime = new Date(ch.start).toLocaleString('UTC', {
+                timeZone: 'CET',
+                hour: '2-digit',
+                minute: '2-digit',
+              });
+              let endTime = new Date(ch.end).toLocaleString('UTC', {
+                timeZone: 'CET',
+                hour: '2-digit',
+                minute: '2-digit',
+              });
+              const showLocalTime = () => {
+                if (isClicked === 'clicked') {
+                  startTime = new Date(ch.start).toLocaleString('default', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                  endTime = new Date(ch.end).toLocaleString('default', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                }
+              };
+              showLocalTime();
+              const showInMunichTime = () => {
+                if (isClicked === '') {
+                  let startTime = new Date(ch.start).toLocaleString('UTC', {
+                    timeZone: 'CET',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                  let endTime = new Date(ch.end).toLocaleString('UTC', {
+                    timeZone: 'CET',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                }
+              };
+              showInMunichTime();
+              const disciplineRoute = Routing(ch.discipline);
+              return (
                 <tr>
-                  <th className='event'>
+                  <th className='sport'>
+                    {' '}
                     <a
                       // href={`https://www.europeanchampionships.com/${
                       //   ch.sport === 'Canoe'
@@ -844,13 +681,13 @@ const Widget3 = () => {
                       style={{ textDecoration: 'none', color: '#1c0e52' }}
                       target='_top'
                     >
-                      {ch.sport} - {ch.event.split('&#039;').join("'")}
+                      {ch.discipline}
                     </a>
                   </th>
-                </tr>
-
-                <tr>
-                  <th>
+                  <th className='event'>
+                    {ch.event.split('&#039;').join("'")}
+                  </th>
+                  <th className='time'>
                     {startTime} - {endTime}
                   </th>
                   <th className='medal'>
@@ -885,11 +722,156 @@ const Widget3 = () => {
                     />
                   </th>
                 </tr>
-              </div>
-            );
-          })}
-        </tbody>
-      </table>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+
+      {nofilter === 'no' ? (
+        <p className='nofilter-mobile'>No Data Available</p>
+      ) : (
+        <table className='content-table-mobile'>
+          <thead>
+            <tr>
+              <th className='sport-event'>
+                {StaticArray[0]['Sport'][lang].toUpperCase()} &{' '}
+                {StaticArray[0]['Eventname'][lang].toUpperCase()}
+              </th>
+            </tr>
+            <tr>
+              <th>{StaticArray[0]['time'][lang]}</th>
+              <th>{StaticArray[0]['Medal'][lang].toUpperCase()}</th>
+              <th>{StaticArray[0]['Venue'][lang].toUpperCase()}</th>
+              <th className='addTo'>
+                {StaticArray[0]['AddTo'][lang].toUpperCase()}
+                <img src={calendar} alt='' />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredData.map((ch) => {
+              let SportName = ch.sport;
+              let MedalEvent;
+              let discipline = ch.discipline;
+              const sportIcon = ConstantSport(discipline);
+
+              const baseUrlDot = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Dots/SVG/ec_${sportIcon}_dot_rgb.svg`;
+              const baseUrlMedal = `https://ecm-ecmdotcom.s3.eu-west-1.amazonaws.com/SPW/Medals/SVG/ec_${sportIcon}_medalicon_rgb.svg`;
+
+              if (ch.medal == 'Yes') {
+                MedalEvent = baseUrlMedal;
+              } else {
+                MedalEvent = baseUrlDot;
+              }
+
+              let startTime = new Date(ch.start).toLocaleString('UTC', {
+                timeZone: 'CET',
+                hour: '2-digit',
+                minute: '2-digit',
+              });
+              let endTime = new Date(ch.end).toLocaleString('UTC', {
+                timeZone: 'CET',
+                hour: '2-digit',
+                minute: '2-digit',
+              });
+              // console.log(startTime);
+              const showLocalTime = () => {
+                if (isClicked === 'clicked') {
+                  startTime = new Date(ch.start).toLocaleString('default', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                  endTime = new Date(ch.end).toLocaleString('default', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                }
+              };
+              showLocalTime();
+              const showInMunichTime = () => {
+                if (isClicked === '') {
+                  let startTime = new Date(ch.start).toLocaleString('UTC', {
+                    timeZone: 'CET',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                  let endTime = new Date(ch.end).toLocaleString('UTC', {
+                    timeZone: 'CET',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  });
+                }
+              };
+              showInMunichTime();
+              const disciplineRoute = Routing(ch.discipline);
+              return (
+                <div className='table-row'>
+                  <tr>
+                    <th className='event'>
+                      <a
+                        // href={`https://www.europeanchampionships.com/${
+                        //   ch.sport === 'Canoe'
+                        //     ? 'canoe-sprint'
+                        //     : ch.sport.toLowerCase().replace(' ', '-')
+                        // }#widget-02`}
+                        href={
+                          bannersport === 'rowing'
+                            ? `/sport/${disciplineRoute}?lang=${lang}&sport=rowing`
+                            : bannersport === 'athletics'
+                            ? `/sport/${disciplineRoute}?lang=${lang}&sport=athletics`
+                            : `/sport/${disciplineRoute}?lang=${lang}`
+                        }
+                        style={{ textDecoration: 'none', color: '#1c0e52' }}
+                        target='_top'
+                      >
+                        {ch.sport} - {ch.event.split('&#039;').join("'")}
+                      </a>
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      {startTime} - {endTime}
+                    </th>
+                    <th className='medal'>
+                      <img src={MedalEvent} alt='' />
+                    </th>
+                    <th className='venue'>{ch.venue}</th>
+                    <th className='calendar'>
+                      <img
+                        src={calendarPlus}
+                        alt=''
+                        onClick={() => {
+                          add(
+                            ch.type,
+                            ch.sport,
+                            ch.discipline,
+                            ch.class,
+                            ch.session,
+                            ch.gender,
+                            ch.phase,
+                            ch.event,
+                            ch.start,
+                            ch.end,
+                            ch.venue,
+                            ch.day,
+                            ch.medal
+                          );
+                          ReactGa.event({
+                            category: 'SPW3',
+                            action: 'Add to Calendar',
+                          });
+                        }}
+                      />
+                    </th>
+                  </tr>
+                </div>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
       <div
         className='footer'
         style={{ backgroundImage: `url(${bannerFooter})` }}

@@ -2,6 +2,15 @@
   .footer-mobile {
     display: none;
   }
+  .nofilter-desktop {
+    display: block;
+    color: #1c0e52;
+    font-size: 30px;
+    text-align: center;
+  }
+  .nofilter-mobile {
+    display: none;
+  }
   .footer {
     width: 80%;
     margin-left: auto;
@@ -302,6 +311,15 @@
     }
     .footer {
       display: none;
+    }
+    .nofilter-desktop {
+      display: none;
+    }
+    .nofilter-mobile {
+      display: block;
+      color: #1c0e52;
+      font-size: 30px;
+      text-align: center;
     }
     .footer-mobile {
       margin-top: 10px;
