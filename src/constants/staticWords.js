@@ -142,14 +142,14 @@ const StaticArray = [
       fr: 'Ajouter à',
     },
     slocaltime: {
-      en: 'Show in local time',
-      de: 'Ihre lokale Zeitzone',
-      fr: 'Afficher en heure locale',
+      en: ' Show in local time',
+      de: ' Ihre lokale Zeitzone',
+      fr: ' Afficher en heure locale',
     },
     smunichtime: {
-      en: 'Show in Munich time',
-      de: 'Gehe zur Münchner Zeitzone',
-      fr: "Afficher àl'heure de Munich",
+      en: ' Show in Munich time',
+      de: ' Gehe zur Münchner Zeitzone',
+      fr: " Afficher àl'heure de Munich",
     },
     amunichtime: {
       en: '*All times in Munich time (GMT+2).',
@@ -163,18 +163,28 @@ const StaticArray = [
     },
     Yes: {
       en: 'Yes',
-      fr: 'OUI',
-      de: 'JA',
+      fr: 'Oui',
+      de: 'Ja',
     },
     No: {
       en: 'No',
-      fr: 'NON',
-      de: 'NEIN',
+      fr: 'Non',
+      de: 'Nein',
     },
     all: {
       en: 'All',
-      fr: 'TOUS',
-      de: 'ALLES',
+      fr: 'Tous',
+      de: 'Alles',
+    },
+    back: {
+      en: 'Back to Full Programme',
+      de: 'Zurück zur Übersicht',
+      fr: 'Retour au programme complet',
+    },
+    time: {
+      en: 'TIME*',
+      de: 'ZEIT*',
+      fr: 'HEURE*',
     },
   },
 ];

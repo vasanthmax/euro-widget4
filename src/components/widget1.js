@@ -602,6 +602,7 @@ const Widget1 = () => {
           </li>
         </ul>
       </div>
+      <iframe src='http://localhost:3000/?lang=en' frameborder='0'></iframe>
     </div>
   );
 };
