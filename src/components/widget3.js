@@ -877,26 +877,66 @@ const Widget3 = () => {
         style={{ backgroundImage: `url(${bannerFooter})` }}
       >
         <div className='web-route'>
-          <a href='https://www.europeanchampionships.com/' target='_top'>
+          <a
+            href='https://www.europeanchampionships.com/'
+            onClick={ReactGa.event({
+              category: 'SPW4',
+              action: 'Redirect',
+              label: 'ec.com',
+            })}
+            target='_top'
+          >
             <p>europeanchampionships.com&nbsp;&nbsp;&nbsp;|</p>
           </a>
-          <a href='https://www.munich2022.com/' target='_top'>
+          <a
+            href='https://www.munich2022.com/'
+            onClick={ReactGa.event({
+              category: 'SPW4',
+              action: 'Redirect',
+              label: 'm22.com',
+            })}
+            target='_top'
+          >
             <p>munich2022.com</p>
           </a>
         </div>
         <ul>
           <li>
-            <a href='https://www.instagram.com/munich2022/' target='_top'>
+            <a
+              href='https://www.instagram.com/munich2022/'
+              onClick={ReactGa.event({
+                category: 'SPW4',
+                action: 'Redirect',
+                label: 'm22Instagram',
+              })}
+              target='_top'
+            >
               <img src={instagramIcon} alt='' />
             </a>
           </li>
           <li>
-            <a href='https://www.facebook.com/ECMunich2022/' target='_top'>
+            <a
+              href='https://www.facebook.com/ECMunich2022/'
+              onClick={ReactGa.event({
+                category: 'SPW4',
+                action: 'Redirect',
+                label: 'm22Facebook',
+              })}
+              target='_top'
+            >
               <img src={facebookIcon} alt='' />
             </a>
           </li>
           <li>
-            <a href='https://twitter.com/ecmunich2022' target='_top'>
+            <a
+              href='https://twitter.com/ecmunich2022'
+              onClick={ReactGa.event({
+                category: 'SPW4',
+                action: 'Redirect',
+                label: 'm22Twitter',
+              })}
+              target='_top'
+            >
               <img src={twitterIcon} alt='' />
             </a>
           </li>
@@ -907,26 +947,66 @@ const Widget3 = () => {
         style={{ backgroundImage: `url(${bannerFooterMobile})` }}
       >
         <div className='web-route'>
-          <a href='https://www.europeanchampionships.com/' target='_top'>
+          <a
+            href='https://www.europeanchampionships.com/'
+            onClick={ReactGa.event({
+              category: 'SPW4',
+              action: 'Redirect',
+              label: 'ec.com',
+            })}
+            target='_top'
+          >
             <p>europeanchampionships.com</p>
           </a>
-          <a href='https://www.munich2022.com/' target='_top'>
+          <a
+            href='https://www.munich2022.com/'
+            onClick={ReactGa.event({
+              category: 'SPW4',
+              action: 'Redirect',
+              label: 'm22.com',
+            })}
+            target='_top'
+          >
             <p>munich2022.com</p>
           </a>
         </div>
         <ul>
           <li>
-            <a href='https://www.instagram.com/munich2022/' target='_top'>
+            <a
+              href='https://www.instagram.com/munich2022/'
+              onClick={ReactGa.event({
+                category: 'SPW4',
+                action: 'Redirect',
+                label: 'm22Instagram',
+              })}
+              target='_top'
+            >
               <img src={instagramIcon} alt='' />
             </a>
           </li>
           <li>
-            <a href='https://www.facebook.com/ECMunich2022/' target='_top'>
+            <a
+              href='https://www.facebook.com/ECMunich2022/'
+              onClick={ReactGa.event({
+                category: 'SPW4',
+                action: 'Redirect',
+                label: 'm22Facebook',
+              })}
+              target='_top'
+            >
               <img src={facebookIcon} alt='' />
             </a>
           </li>
           <li>
-            <a href='https://twitter.com/ecmunich2022' target='_top'>
+            <a
+              href='https://twitter.com/ecmunich2022'
+              onClick={ReactGa.event({
+                category: 'SPW4',
+                action: 'Redirect',
+                label: 'm22Twitter',
+              })}
+              target='_top'
+            >
               <img src={twitterIcon} alt='' />
             </a>
           </li>
