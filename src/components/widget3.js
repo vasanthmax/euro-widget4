@@ -38,7 +38,7 @@ const Widget3 = () => {
       ? 'athletics'
       : 'default'
   }.svg`;
-  const bannerMobileHeader = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/mobile/en/mobile_header_${lang}_${
+  const bannerMobileHeader = `https://d156xmnjzkwf2j.cloudfront.net/SPW/header/mobile/${lang}/mobile_header_${lang}_${
     bannersport === 'rowing'
       ? 'rowing'
       : bannersport === 'athletics'
